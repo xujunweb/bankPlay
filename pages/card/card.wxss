@@ -1,0 +1,19 @@
+/* pages/card/card.wxss */
+.title{
+  font-size: 26rpx;color: #888;
+  margin-top: 30rpx;padding-left: 20rpx;
+}
+.input{
+  background: #fff;padding: 10rpx 20rpx;margin-top: 30rpx;
+  font-size: 30rpx;display: flex;justify-content: space-between
+}
+.input text{
+  display: inline-block;line-height: 48rpx;
+  margin-right: 20rpx;
+}
+.input input{
+  flex-grow: 1;line-height: 45rpx;font-size: 30rpx;
+}
+.button{
+  margin-top: 50rpx;
+}

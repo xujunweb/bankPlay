@@ -89,6 +89,7 @@ App({
     isCouldAuth: 0,//用户是否点击了允许授权 0:首次进入;1:点击了允许;2:点击了拒绝
     money:0,  //支付金额
     order:'', //订单号
+    bankInfo:{},   //银行卡信息
   },
   //获取openid
   getOpenId: function (data) {

@@ -1,5 +1,4 @@
 {
-  "enablePullDownRefresh":true,
-  "navigationBarTitleText":"",
+  "navigationBarTitleText":"确认支付",
   "usingComponents": {}
 }

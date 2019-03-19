@@ -2,5 +2,22 @@
 <view class='content'>
   <view class='order'>{{order}}</view>
   <view class='money'>￥{{money}}</view>
-  <button class='button'>确认支付</button>
+  <button class='button' hover-class='clickHover' bindtap='openModal'>确认支付</button>
+</view>
+<!-- 支付弹窗 -->
+<view class='playModal' wx:if="{{modal}}">
+  <view class="popup_bg"></view>
+  <view class="popup_cont" catchtap='closeModal'>
+    <view class='pop-div'>
+      <view class='title'>
+        <image src='../../image/close.png' catchtap='closeModal'></image>
+        请选择支付方式
+      </view>
+      <view class='pop-text'>
+        <view class='pop-order'>{{order}}</view>
+        <view class='pop-money'>￥{{money}}</view>
+      </view>
+      <view class='btn' catchtap='goCard'>使用新卡支付</view>
+    </view>
+  </view>
 </view>
