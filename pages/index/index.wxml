@@ -1,2 +1,6 @@
 <!-- 头部封面 -->
-<view class="share_code_bg">111111111111111111111</view>
+<view class='content'>
+  <view class='order'>{{order}}</view>
+  <view class='money'>￥{{money}}</view>
+  <button class='button'>确认支付</button>
+</view>

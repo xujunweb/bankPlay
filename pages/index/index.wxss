@@ -1,0 +1,18 @@
+
+.content{
+  background: #fff;
+  overflow: hidden;
+  text-align: center;padding-bottom: 50rpx;
+}
+.order{
+  margin-top: 40rpx;
+  font-size: 36rpx;
+}
+.money{
+  margin-top: 10rpx;
+  font-size: 40rpx;color: #888;
+}
+.button{
+  width: 90%;background: #20bd1d;color: #fff;margin: 0 auto;
+  margin-top: 20rpx;font-size: 36rpx;height: 80rpx;line-height: 80rpx;
+}

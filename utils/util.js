@@ -9,7 +9,7 @@ function formatTime(time) {
   time = time % 60
   var second = time
 
-  return ([hour, minute, second]).map(function (n) {
+  return ([hour, minute, second]).map(function(n) {
     n = n.toString()
     return n[1] ? n : '0' + n
   }).join(':')
@@ -30,43 +30,40 @@ function formatLocation(longitude, latitude) {
   }
 }
 
-function GetTime(str,format){
-    var date = new Date(str);
-    var Y = date.getFullYear() + '-';
-    var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
-    var D = date.getDate()<10? '0'+(date.getDate()):date.getDate();
-    var hh = (parseInt(date.getHours())>9?date.getHours():'0'+date.getHours()) + ':';
-    var mm = (parseInt(date.getMinutes())>9?date.getMinutes():"0"+date.getMinutes()) + ':';
-    var mmEnd =(parseInt(date.getMinutes())>9?date.getMinutes():"0"+date.getMinutes());
-    var ss = parseInt(date.getSeconds())>9?date.getSeconds():'0'+date.getSeconds();
+function GetTime(str, format) {
+  var date = new Date(str);
+  var Y = date.getFullYear() + '-';
+  var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+  var D = date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate();
+  var hh = (parseInt(date.getHours()) > 9 ? date.getHours() : '0' + date.getHours()) + ':';
+  var mm = (parseInt(date.getMinutes()) > 9 ? date.getMinutes() : "0" + date.getMinutes()) + ':';
+  var mmEnd = (parseInt(date.getMinutes()) > 9 ? date.getMinutes() : "0" + date.getMinutes());
+  var ss = parseInt(date.getSeconds()) > 9 ? date.getSeconds() : '0' + date.getSeconds();
 
-    if(format) {
-        if (format == 'Y-M-D hh:mm:ss') {
-            return Y + M + D + " " + hh + mm + ss;
-        }
-        else if (format == 'Y-M-D hh:mm') {
-            return Y + M + D + " " + hh + mmEnd;
-        }
-        else {
-            return Y + M + D
-        }
+  if (format) {
+    if (format == 'Y-M-D hh:mm:ss') {
+      return Y + M + D + " " + hh + mm + ss;
+    } else if (format == 'Y-M-D hh:mm') {
+      return Y + M + D + " " + hh + mmEnd;
+    } else {
+      return Y + M + D
     }
-    else {
-        return Y + M + D
-    }
+  } else {
+    return Y + M + D
+  }
 }
 
 function formatMoney(money) {
 
   if (money == 0) return '0.00';
-  money = money/100;
+  money = money / 100;
   money = (+money).toFixed(2);
   return money;
 }
 
 function formatMoney2(money) {
   if (money == 0) return 0;
-  money = money/100;
+  money = money / 100;
   money = (+money);
   return money.toString();
 }
@@ -74,13 +71,13 @@ function formatMoney2(money) {
 /**
  * 价格格式化：有分的格式化2位，无分有角格式化1位，无分无角格式化0位
  */
-function formatMoney3(money){
+function formatMoney3(money) {
 
   if (money % 100 == 0) return money / 100;
 
-  if (money % 10 == 0) return (money/100).toFixed(1)
+  if (money % 10 == 0) return (money / 100).toFixed(1)
 
-  return (money/100).toFixed(2);
+  return (money / 100).toFixed(2);
 }
 
 //获取当前时间格式
@@ -100,28 +97,56 @@ function formatTimeLayout(date) {
 function formatNumber(n) {
   n = n.toString()
   return n[1] ? n : '0' + n
-} 
+}
 
 //处理IM返回的用户信息
-function handleArryToObject(arry){
+function handleArryToObject(arry) {
   var obj = {}
-  for(let i =0,item;item=arry[i];i++){
+  for (let i = 0, item; item = arry[i]; i++) {
     obj[item.To_Account] = {}
-    for (let k = 0, list; list = item.ProfileItem[k];k++){
+    for (let k = 0, list; list = item.ProfileItem[k]; k++) {
       obj[item.To_Account][list.Tag] = list.Value
     }
   }
   return obj
 }
-
+//获取url的参数
+function GetUrlParam(paraName, lurl) {
+  var url = lurl;　　　
+  var arrObj = url.split("?");　　　
+  if (arrObj.length > 1) {　　　　　
+    var arrPara = arrObj[1].split("&");　　　　　
+    var arr;　　　　　
+    for (var i = 0; i < arrPara.length; i++) {　　　　　　　
+      arr = arrPara[i].split("=");　　　　　　　
+      if (arr != null && arr[0] == paraName) {　　　　　　　　　
+        return arr[1];　　　　　　　
+      }　　　　　
+    }　　　　　
+    return "";　　　　
+  } else {　　　　　
+    return "";　　　
+  }　　
+}
+function urlTo(lurl) {
+  var url = lurl
+  url = url.replace(/%3A/g, ':')
+  url = url.replace(/%2F/g, '/')
+  url = url.replace(/%3F/g, '?')
+  url = url.replace(/%3D/g, '=')
+  url = url.replace(/%26/g, '&')
+  return url
+}
 
 module.exports = {
-  formatTime:formatTime,
-  formatLocation:formatLocation,
-  GetTime:GetTime,
+  formatTime: formatTime,
+  formatLocation: formatLocation,
+  GetTime: GetTime,
   formatMoney,
   formatMoney2,
   formatMoney3,
   formatTimeLayout,
-  handleArryToObject
+  handleArryToObject,
+  GetUrlParam,
+  urlTo
 };

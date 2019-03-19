@@ -2,7 +2,7 @@
 import { newPage, eventBus } from './utils/global-life-cycle.js'
 import env from './utils/config.js'
 import { getOpenId } from './api/global.js'
-
+import { GetUrlParam, urlTo } from './utils/util.js'
 newPage({//引入监听全局每个页面的生命周期
   onLoad: function (that, s) {
     var pageR = getCurrentPages();
@@ -47,13 +47,22 @@ newPage({//引入监听全局每个页面的生命周期
   },
 });
 App({
-  onLaunch: function () {
+  onLaunch: function (e) {
     // 展示本地存储能力
     wx.eventBus = eventBus  //将发布订阅模式挂载到wx.eventBus上
     //环境配置
     wx.envConfig = env[env.mode]
     //登录
-    this.getOpenId()
+    // this.getOpenId()
+    //扫码进入小程序
+    if (e.query.q) {
+      console.log('app-onLaunch-----q', GetUrlParam('money', urlTo(e.query.q)))
+      console.log('app-onLaunch-----order', GetUrlParam('order', urlTo(e.query.q)))
+      this.globalData.money = GetUrlParam('money', urlTo(e.query.q))
+      this.globalData.order = GetUrlParam('order', urlTo(e.query.q))
+    }
+    this.globalData.money = 0.01
+    this.globalData.order = 11122255
     // 获取用户信息
     // wx.getSetting({
     //   success: res => {
@@ -78,6 +87,8 @@ App({
   globalData: {
     userInfo: null,
     isCouldAuth: 0,//用户是否点击了允许授权 0:首次进入;1:点击了允许;2:点击了拒绝
+    money:0,  //支付金额
+    order:'', //订单号
   },
   //获取openid
   getOpenId: function (data) {
