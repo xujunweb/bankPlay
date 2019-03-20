@@ -1,5 +1,5 @@
 <!--pages/card/card.wxml-->
-<view class='title'>请使用账户人本的银行卡</view>
+<view class='title'>请使用账户人本的银行卡，目前只支持储蓄卡</view>
 <view class='input'>
   <text>卡号</text><input value='{{bank}}' bindinput='changeInput'></input>
 </view>

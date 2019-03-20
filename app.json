@@ -3,7 +3,10 @@
     "pages/index/index",
     "pages/log/log",
     "pages/card/card",
-    "pages/info/info"
+    "pages/info/info",
+    "pages/code/code",
+    "pages/setpsd/setpsd",
+    "pages/inpsd/inpsd"
   ],
   "window": {
     "backgroundTextStyle": "dark",

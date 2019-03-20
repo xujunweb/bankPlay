@@ -1,0 +1,12 @@
+<!--pages/setpsd/setpsd.wxml-->
+<view class="psw_box">
+    <view class="psw-input">
+        <input type="number" password = "{{psw1Display?false:true}}"  maxlength="6" bindinput="bindPsw1" placeholder="{{placeholder1}}" placeholder-class="input_place_hoder" focus/>
+        <view catchtap="bindDisplayPsw1" class="psw_diaplay {{psw1Display?'psw_hide':''}}"></view>
+    </view>
+    <view class="psw-input">
+        <input  type="number" password = "{{psw2Display?false:true}}" maxlength="6" bindinput="bindPsw2" placeholder="{{placeholder2}}" placeholder-class="input_place_hoder"/>
+        <view catchtap="bindDisplayPsw2" class="psw_diaplay {{psw2Display?'psw_hide':''}}"></view>
+    </view> 
+    <button class="sure_btn" disabled="{{isNextClick}}" bindtap="surePsw">确定</button>
+</view>

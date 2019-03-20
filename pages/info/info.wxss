@@ -1,1 +1,26 @@
 /* pages/info/info.wxss */
+.p-title{
+  padding: 0 30rpx;
+  padding-top: 30rpx;
+  font-size: 26rpx;line-height: 40rpx;color: #888;
+}
+.op-from{
+  background: #fff;padding: 0 30rpx;margin-top: 10rpx;
+}
+.op-from .li{
+  border-bottom: 1rpx solid #e6e6e6;
+  height: 80rpx;line-height: 80rpx;display: flex;
+  justify-content: space-between;align-items: center;
+}
+.op-from .last-li{
+  border-bottom: none;
+}
+.op-from .li .lebal{
+  color: #222;font-size: 30rpx;width: 150rpx;
+}
+.op-from .li .right{
+  flex-grow: 1;color: #222;font-size: 30rpx;
+}
+.op-from .li .right .span{
+  color: #888;
+}

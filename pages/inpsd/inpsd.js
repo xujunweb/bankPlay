@@ -1,13 +1,11 @@
-// pages/card/card.js
-import bankCheck from '../../utils/blank.js'
-var app = getApp()
+// pages/inpsd/inpsd.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    bank:'', //银行卡号
+
   },
 
   /**
@@ -30,35 +28,7 @@ Page({
   onShow: function () {
 
   },
-  // 卡号输入
-  changeInput:function (e){
-    this.setData({
-      bank:e.detail.value
-    })
-  },
-  //下一步(校验卡号)
-  next:function (){
-    console.log(bankCheck(this.data.bank))
-    var result = bankCheck(this.data.bank)
-    if (result === 'error'){
-      wx.showToast({
-        title: '银行卡有误',
-        icon:'none',
-      })
-      return
-    }
-    if (result.cardType !== 'DC'){
-      wx.showToast({
-        title: '只支持储蓄卡',
-        icon: 'none',
-      })
-      return
-    }
-    app.globalData.bankInfo = { ...result, bank: this.data.bank}
-    wx.navigateTo({
-      url: '/pages/info/info',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面隐藏
    */

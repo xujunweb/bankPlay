@@ -1,0 +1,23 @@
+/* pages/code/code.wxss */
+.title{
+  text-align: center;font-size: 30rpx;
+  color: #222;font-weight: bold;margin-top: 80rpx;
+}
+.tip{
+  color: #888;font-size: 24rpx;margin-top: 20rpx;text-align: center
+}
+.code{
+  margin-top: 40rpx;
+  border-top: 1px solid #e6e6e6;background: #fff;line-height: 80rpx;height: 80rpx;
+  display: flex;justify-content: space-between;align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+.code .lebal{
+  font-size: 28rpx;color: #222;width: 150rpx;margin-left: 30rpx;
+}
+.code input{
+  flex-grow: 1;font-size: 28rpx;
+}
+.code .btn{
+  font-size: 28rpx;color: #888;width: 230rpx;text-align: center;border-left: 1rpx solid #e6e6e6;
+}

@@ -1,0 +1,15 @@
+/* pages/setpsd/setpsd.wxss */
+page{ overflow: hidden;}
+.psw_box{ margin-top: 20rpx; }
+.psw-input{ background: #fff; padding: 0 30rpx; height: 90rpx; position: relative; }
+.psw_box .psw-input:first-child{ border-bottom: 1px solid #e2e2e2; }
+.psw-input input{ height: 90rpx; line-height: 90rpx; width: 400rpx; font-size: 32rpx; color: #222; }
+.input_place_hoder{ color: #aaa; }
+.psw_diaplay{ 
+  height: 90rpx; width: 100rpx; position: absolute; right: 0; top:0;
+  background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/psw-hide.png) no-repeat center center; background-size: 40rpx 27rpx; 
+}
+.psw_hide{  background: url(http://yamxcx.oss-cn-shenzhen.aliyuncs.com/xcx/psw-display.png) no-repeat center center; background-size: 40rpx 27rpx; }
+.sure_btn{ font-size: 34rpx; color: #fff; height: 88rpx; line-height: 88rpx; border-radius: 44rpx; background: #d3a95a; margin: 100rpx 30rpx;}
+button[disabled]:not([type]) {background:#d3a95a; color: #fff; opacity: 0.4;}
+.sure_btn::after { border: 0;}

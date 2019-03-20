@@ -38,12 +38,34 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
 					"name": "添加银行卡",
-					"pathName": "pages/card/card"
+					"pathName": "pages/card/card",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "填写信息",
+					"pathName": "pages/info/info",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "验证手机号",
+					"pathName": "pages/code/code",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "设置支付密码",
+					"pathName": "pages/setpsd/setpsd",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

@@ -29,7 +29,7 @@ button::after{
 }
 .button{
   width: 90%;background: #20bd1d;color: #fff;margin: 0 auto;
-  margin-top: 20rpx;font-size: 36rpx;height: 80rpx;line-height: 80rpx;
+  margin-top: 30rpx;font-size: 36rpx;height: 80rpx;line-height: 80rpx;
 }
 .clickHover{
   background: #b2d01f;

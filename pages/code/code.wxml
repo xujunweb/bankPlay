@@ -1,0 +1,9 @@
+<!--pages/code/code.wxml-->
+<view class='title'>接收验证码：<text>13330225478</text></view>
+<view class='tip'>请输入银行卡预留手机号接收的验证码</view>
+<view class='code'>
+  <view class='lebal'>验证码</view>
+  <input value='{{code}}' placeholder='输入验证码'></input>
+  <view class='btn {{codeText=="获取验证码"?"":"code_sel"}}' bindtap="sendCode">{{codeText}}</view>
+</view>
+<button class='button' hover-class='clickHover' bindtap='next'>下一步</button>

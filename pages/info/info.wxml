@@ -1,2 +1,35 @@
 <!--pages/info/info.wxml-->
-<text>pages/info/info.wxml</text>
+<view class='p-title'>银行卡信息</view>
+<view class='op-from'>
+  <view class='li'>
+    <view class='lebal'>银行</view>
+    <view class='right'>{{bank}}</view>
+  </view>
+  <view class='li last-li'>
+    <view class='lebal'>卡类型</view>
+    <view class='right'>{{type}}</view>
+  </view>
+</view>
+<view class='p-title'>请填写持卡人的信息</view>
+<view class='op-from'>
+  <view class='li'>
+    <view class='lebal'>姓名</view>
+    <view class='right'><input value='{{name}}' bindinput='changeInput' data-type='name'></input></view>
+  </view>
+  <view class='li'>
+    <view class='lebal'>证件类型</view>
+    <view class='right'><view class='span'>身份证</view></view>
+  </view>
+  <view class='li last-li'>
+    <view class='lebal'>证件号</view>
+    <view class='right'><input value='{{idcard}}' bindinput='changeInput' data-type='idcard'></input></view>
+  </view>
+</view>
+<view class='p-title'>请填写银行预留手机号</view>
+<view class='op-from'>
+  <view class='li last-li'>
+    <view class='lebal'>手机号</view>
+    <view class='right'><input value='{{phone}}' bindinput='changeInput' data-type='phone'></input></view>
+  </view>
+</view>
+<button class='button' hover-class='clickHover' bindtap='next'>下一步</button>
