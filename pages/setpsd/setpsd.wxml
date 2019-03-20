@@ -10,3 +10,5 @@
     </view> 
     <button class="sure_btn" disabled="{{isNextClick}}" bindtap="surePsw">确定</button>
 </view>
+
+<paySixDialog isShowPayInput="{{isShowPayInput}}" focus="{{focus}}"></paySixDialog>

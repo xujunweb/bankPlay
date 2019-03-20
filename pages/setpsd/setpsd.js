@@ -12,6 +12,8 @@ Page({
     psw2: '', 
     psw1Display: false,   //密码1是否显示明文
     psw2Display: false,   //密码2是否显示明文
+    isShowPayInput:false, //支付密码弹窗
+    focus:false,  //获取焦点
   },
 
   /**
@@ -90,6 +92,10 @@ Page({
     wx.showLoading({ title: '加载中...' });
 
     //调接口 设置/修改密码
+    this.setData({
+      isShowPayInput:true,
+      focus:true,
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏

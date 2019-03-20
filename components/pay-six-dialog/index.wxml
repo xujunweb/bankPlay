@@ -1,0 +1,27 @@
+<!-- 支付输入密码 -->
+<input type="number" class='hiddenInput' focus="{{focus}}" bindfocus='getBoardHeight' bindinput='setPayPass'  maxlength='6' adjust-position="{{false}}" value='{{password}}'></input> 
+<view class='pay-input-dialog' wx:if="{{isShowPayInput}}">
+  <view class='pay-input-modal' catchtouchmove='true'></view>
+  <view class='pay-input-body' style="bottom:calc({{translateY}}px);">
+     
+    <view class='body-header'>
+      <view class='back-icon' catchtap='emptyBoardHeight'>
+        <text></text>
+      </view>
+      <text>输入支付密码</text>
+    </view>
+    <view class='body-content' bindtap='setFocus'>
+      <view class='body-content-tip'>请输入支付密码，支付此订单。</view>
+      <!-- <paySix class="pay-six" bindvalueSix="valueSix" style="width:100%;"></paySix> -->
+      <view class='password-container'>
+        <!-- <paySix bindvalueSix="valueSix" style="width:100%;"></paySix> -->
+        <view class='password-item' wx:for-index="index" wx:key="{{index}}" wx:for="{{6}}">
+          <view class='pass-fill-point' wx:if="{{index < password.length}}"></view>
+        </view>
+      </view>
+      <text class='forget-pass' catchtap='forgetPass'>
+        <text>忘记密码</text>
+      </text>
+    </view>
+  </view>
+</view>

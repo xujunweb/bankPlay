@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "设置支付密码",
-  "usingComponents": {}
+  "usingComponents": {
+    "paySixDialog":"/components/pay-six-dialog/index"
+  }
 }

@@ -5,8 +5,7 @@
     "pages/card/card",
     "pages/info/info",
     "pages/code/code",
-    "pages/setpsd/setpsd",
-    "pages/inpsd/inpsd"
+    "pages/setpsd/setpsd"
   ],
   "window": {
     "backgroundTextStyle": "dark",
